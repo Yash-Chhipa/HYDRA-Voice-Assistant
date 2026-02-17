@@ -1,132 +1,195 @@
-🗣️ HYDRA - AI Voice Assistant (Jarvis Clone)
-<div align="center">
-"Hey Hydra time" → "The time is 5:18 PM"
-"Hey Hydra joke" → Random funny joke
-Always listening - Zero button clicks!
+# 🗣️ HYDRA – Wake Word Voice Assistant
 
-[
-[
-[
+HYDRA is a Python-based voice assistant with a modern GUI that listens for a wake word **("Hey Hydra")** and performs tasks like telling time/date, playing music, searching the web, telling jokes, and more.
 
-</div>
-✨ Features
-🎙️ Wake Word	"Hey Hydra" 
-🗣️ Speech	Natural Microsoft voices
-👤 Voice Input	Google Speech Recognition
-🌐 Web Control	YouTube, Google, Poki Games
-🎨 GUI	Modern CustomTkinter dark theme
-💾 Logs	Chat history + Save feature
-🚀 30-Second Setup
-bash
-git clone https://github.com/YOUR_USERNAME/HYDRA-Voice-Assistant.git
+Built using speech recognition, text-to-speech, and automation libraries, HYDRA is designed as a beginner-friendly yet extensible personal assistant project.
+
+---
+
+## 🚀 Features
+
+- Wake word detection — Say **Hey Hydra** to activate  
+- Speech recognition using Google Speech API  
+- Text-to-speech voice responses  
+- Modern GUI using CustomTkinter  
+- Play songs directly on YouTube  
+- Wikipedia-based information lookup  
+- Open websites (Google, YouTube, Games)  
+- Built-in joke generator  
+- Web search automation  
+- Save assistant conversation logs  
+- Multithreading for smooth GUI performance  
+
+---
+
+## 🛠️ Tech Stack
+
+**Language**
+- Python  
+
+**Libraries & Tools**
+- CustomTkinter — GUI  
+- SpeechRecognition — Voice Input  
+- pyttsx3 — Text To Speech  
+- PyWhatKit — YouTube & Search Automation  
+- Wikipedia API — Knowledge Fetching  
+- PyJokes — Joke Generator  
+- Webbrowser — Browser Automation  
+- Threading — Background Processing  
+
+---
+
+## 📦 Installation
+
+### Clone Repository
+```bash
+git clone https://github.com/Yash-Chhipa/HYDRA-Voice-Assistant.git
 cd HYDRA-Voice-Assistant
-pip install -r requirements.txt
-python HYDRA.py
-HYDRA auto-starts & listens for "Hey Hydra"!
+```
 
-🎯 Voice Commands
-Command	Response
-Hey Hydra time	Current time
-Hey Hydra date	Today's date (Feb 17, 2026)
-Hey Hydra joke	Random joke
-Hey Hydra play [song]	YouTube playback
-Hey Hydra search [term]	Google search
-Hey Hydra who is [name]	Wikipedia summary
-Hey Hydra open google	Opens Google
-Hey Hydra open youtube	Opens YouTube
-Hey Hydra games	Poki.com games
-Hey Hydra stop	Graceful shutdown
-📱 Demo Flow
-text
-F5 → "Hey Hydra is active!" (auto)
-👤 "Hey Hydra time" 
-🤖 "The time is 5:18 PM"
-👤 "Hey Hydra joke"
-🤖 "Why don't programmers like nature? It has too many bugs!"
-🛠️ Tech Stack
-python
-customtkinter==5.2.2      # Modern dark GUI
-pyttsx3==2.90            # Windows SAPI5 TTS
-speechrecognition==3.10.0 # Google Speech API
-pywhatkit==5.4           # YouTube automation
-wikipedia==1.4.0         # Knowledge base
-pyjokes==1.0.0           # Entertainment
-numpy==1.24.3            # Audio processing
-📦 Complete Installation
-Prerequisites
-text
-✓ Python 3.8+ 
-✓ Windows 10/11
-✓ Microphone + Speakers
-✓ Internet (Google Speech API)
-One-Command Setup
-bash
-pip install -r requirements.txt
-python HYDRA.py
-Troubleshooting
-text
-❌ No speech → Windows Sound → App volume → Python.exe
-❌ Mic error → Settings → Privacy → Microphone → Allow apps  
-❌ ImportError → pip install pyaudio --upgrade
-📸 Screenshots
-<div align="center"> <img src="https://via.placeholder.com/350x250/1a202c/60a5fa?text=Modern+Dark+GUI" width="45%" alt="HYDRA GUI"> <img src="https://via.placeholder.com/350x250/1a202c/60a5fa?text=Hey+Hydra+Active" width="45%" alt="Always Listening"> </div>
-🏗️ Project Structure
-text
+### Install Dependencies
+```bash
+pip install customtkinter SpeechRecognition pyttsx3 wikipedia pywhatkit pyjokes pyaudio
+```
+
+### If PyAudio Fails
+```bash
+pip install pipwin
+pipwin install pyaudio
+```
+
+---
+
+## ▶️ Run HYDRA
+
+```bash
+python hydra.py
+```
+
+---
+
+## 🎤 Usage Guide
+
+1. Click **START HYDRA**  
+2. Say → **Hey Hydra**  
+3. Speak your command  
+
+### Example Commands
+- Hey Hydra time  
+- Hey Hydra date  
+- Hey Hydra play Arijit Singh songs  
+- Hey Hydra who is Albert Einstein  
+- Hey Hydra joke  
+- Hey Hydra search Python tutorials  
+- Hey Hydra stop  
+
+---
+
+## 🖥️ GUI Controls
+
+| Button | Action |
+|---|---|
+| 🚀 START HYDRA | Starts Assistant |
+| ⏹️ STOP | Stops Assistant |
+| 💾 SAVE LOGS | Saves Chat Logs |
+
+---
+
+## 🧠 Working Architecture
+
+HYDRA follows a continuous loop:
+
+1. Listen for Wake Word  
+2. Activate Command Mode  
+3. Process Voice Command  
+4. Execute Task  
+5. Return to Wake Mode  
+
+---
+
+## 📁 Project Structure
+
+```
 HYDRA-Voice-Assistant/
-├── HYDRA.py            # Main application (~400 lines)
-├── requirements.txt    # Dependencies
-├── README.md          # This file
-└── .gitignore         # Python ignores
-🔧 Customization Guide
-Change Wake Word
-python
-# Line ~95 - Edit this:
-if "hey jarvis" in command:  # Your choice!
-Voice Settings
-python
-engine.setProperty('rate', 200)    # Speed (150-250)
-engine.setProperty('volume', 1.0)  # Volume (0.0-1.0)
-Add New Commands
-python
-elif 'weather' in command:
-    speak("Opening weather app")
-    os.system("start ms-weather:")
-🤝 Contributing
-Fork repository
+│
+├ hydra.py
+├ README.md
+├ LICENSE
+└ requirements.txt (optional)
+```
 
-git checkout -b feature/cool-feature
+---
 
-git commit -m "Add cool feature"
 
-git push origin feature/cool-feature
 
-Open Pull Request
+## 🤝 Contributing
 
-📄 License
-MIT License - Free to use, modify, distribute!
+Contributions are welcome.
 
-👨‍💻 Author
-Yash Chhipa
-B.Tech 1st Year | Web Developer | AI Enthusiast
-📍 Jaipur, Rajasthan, India (Studying in Lucknow)
-📧 yashchhipa8@gmail.com 
-💼 LinkedIn 
+**Steps**
+1. Fork Repository  
+2. Create Feature Branch  
+3. Commit Changes  
+4. Push Branch  
+5. Open Pull Request  
 
-🙏 Acknowledgments
-text
-🔹 CustomTkinter - Stunning GUI library
-🔹 pyttsx3 - Reliable Windows TTS  
-🔹 SpeechRecognition - Google STT
-🔹 Perplexity AI - Debug assistance
-🔹 Yash's debugging skills! 💪
-⭐ Support the Project
-text
-⭐ Star if you like it!
-🍴 Fork for your version
-🐛 Issues → Help improve!
+---
+
+## 📜 License
+
+Licensed under the **MIT License**.
+
+---
+
+## 👨‍💻 Maintainer & Contact
+
 <div align="center">
-🎙️ Built with ❤️ in Jaipur, India
-"Hey Hydra" → Your personal AI companion!
-February 2026
+
+### **Yash Chhipa**  
+🚀 Student Developer | Python Enthusiast |
+    February 2026
 
 </div>
+
+---
+
+### 📌 Developer Profile
+
+- **GitHub:** https://github.com/Yash-Chhipa  
+- **LinkedIn:** www.linkedin.com/in/yash-chhipa-14b43b380 
+- **Full Name:** Yash Chhipa  
+- **Email:** yashchhipa8@gmail.com
+- **Current Study Location:** Lucknow, India  
+- **Permanent Residence:** Jaipur, India  
+- **Role:** Student | Open Source Contributor  
+
+---
+
+### 🌟 Developer Focus
+
+- Python Development  
+- Automation Systems  
+- Voice AI Applications  
+- GUI Application Development  
+
+---
+
+### 🤝 Collaboration
+
+Interested in:
+- Contributing to HYDRA  
+- Suggesting new features  
+- Reporting bugs  
+- Collaborating on AI / Python projects  
+
+Feel free to open an **Issue** or **Pull Request**.
+
+---
+
+<div align="center">
+
+⭐ **If you found this project useful, consider starring the repository!** ⭐  
+
+</div>
+
+---
